@@ -78,7 +78,10 @@
           <mat-row
             *matRowDef="let row; columns: displayedColumns"
             (click)="onRowClicked(row)"
-            [ngClass]="{'blink' : row.remainingtime <=10, 'red' : row.remainingtime===0}"
+            [ngClass]="{
+              blink: row.remainingtime <= 10,
+              red: row.remainingtime === 0
+            }"
           ></mat-row>
         </mat-table>
         <!-----End of table -->
@@ -120,11 +123,27 @@
             <button
               mat-raised-button
               color="primary"
-              [disabled]="!bidForm.valid"
+              [disabled]="!bidForm.valid || selectedItem.sold"
               type="submit"
               *ngIf="showSubmitBit"
             >
-              Submit Bid
+              <span *ngIf="selectedItem.sold && selectedItem.wininguser">
+                Item Sold
+              </span>
+
+              <div
+                *ngIf="
+                  !selectedItem.wininguser && !selectedItem.wininguser;
+                  then thenTemplateName;
+                  else elseTemplateName
+                "
+              >
+                Here is never showing
+              </div>
+              <ng-template #thenTemplateName>
+                no winner time expired
+              </ng-template>
+              <ng-template #elseTemplateName> Submit Bid </ng-template>
             </button>
             <button
               mat-raised-button
@@ -176,7 +195,7 @@
         <mat-card fxLayoutAlign="center center">
           <div class="logClass">
             <ng-container *ngFor="let text_log of soldHistory">
-              {{ text_log }}            
+              {{ text_log }}
               <br />
             </ng-container>
           </div>
@@ -186,9 +205,10 @@
           <div class="logClass">
             <p>Messages:</p>
             <ng-container *ngFor="let text_log of messages">
-             
-              <p *ngIf="showSenderMessage"> from: {{text_log.sender}}=>  {{ text_log.message }}</p>
-            
+              <p *ngIf="showSenderMessage">
+                from: {{ text_log.sender }}=> {{ text_log.message }}
+              </p>
+
               <br />
             </ng-container>
           </div>
@@ -197,7 +217,7 @@
       <!-- Message Card -->
       <mat-card fxLayoutAlign="center center">
         <p>
-         {{ message }}
+          {{ message }}
         </p>
       </mat-card>
       <!-- Error Card -->

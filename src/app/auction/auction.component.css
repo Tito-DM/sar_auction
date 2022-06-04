@@ -4,6 +4,7 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
 
 .red{
   background-color: red;
+  color: white;
 }
 
 .blink {
