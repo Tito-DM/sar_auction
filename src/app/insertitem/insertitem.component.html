@@ -1,0 +1,89 @@
+<mat-sidenav-container>
+  <mat-sidenav  #sidenav role="navigation">
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+     <div fxHide.gt-xs>
+       <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+     <div>
+       <a routerLink="/">
+          Auction SAR 22
+       </a>
+     </div>
+     <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
+        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+            <li>
+                <a
+                  routerLink="/auction">
+                    <mat-icon class="icon">dashboard</mat-icon>
+                    <span class="label">auction</span>
+                </a>
+              </li>
+            <li>
+                <a>
+                  <mat-icon class="icon"(click)="logout()">input</mat-icon>
+                  <span class="label"(click)="logout()">LogOut</span>   
+                 </a>
+            </li>
+        </ul>
+     </div>
+    </mat-toolbar>
+    <main>
+	    <mat-card fxLayoutAlign="center center">
+          <form [formGroup]="itemForm" (submit)="submit()">
+            <div fxLayout="column" fxFlex fxLayout.lt-sm="column" fxLayoutGap="0px">
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label> Description
+                </mat-label>
+                <input matInput formControlName="description" id="description" type="text" class="form-control">
+                <mat-error *ngIf="f['description'].touched && f['description'].invalid">
+                  <span *ngIf="f['description'].errors['required']">This field is mandatory.</span>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label> Starting bid value
+                </mat-label>
+                <input matInput formControlName="currentbid" id="currentbid" type="number" class="form-control">
+                <mat-error *ngIf="f['currentbid'].touched && f['currentbid'].invalid">
+                  <span *ngIf="f['currentbid'].errors['required']">This field is mandatory.</span>
+                  <span *ngIf="f['currentbid'].errors['pattern']">This must be a positive number.</span>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label> Buy now Value
+                </mat-label>
+                <input matInput formControlName="buynow" id="buynow" type="number" class="form-control">
+                <mat-error *ngIf="f['buynow'].touched && f['buynow'].invalid">
+                   <span *ngIf="f['buynow'].errors['required']">This field is mandatory.</span>
+                   <span *ngIf="f['buynow'].errors['pattern']">This must be a positive number.</span>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label> Duration (in seconds)
+                </mat-label>
+                <input matInput formControlName="remainingtime" id="remainingtime" type="text" class="form-control">
+                <mat-error *ngIf="f['remainingtime'].touched && f['remainingtime'].invalid">
+                  <span *ngIf="f['remainingtime'].errors['required']">This field is mandatory.</span>
+                  <span *ngIf="f['remainingtime'].errors['pattern']">This must be a positive number.</span>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label> Owner (username)
+                </mat-label>
+                <input matInput formControlName="owner" id="owner" type="text" class="form-control">
+              </mat-form-field>
+              <button mat-raised-button  color="primary" [disabled]="!itemForm.valid" type="submit">Insert Item</button>
+              <button mat-raised-button color="primary" type= "button" (click)="clearForm()">Clear</button>
+            </div>
+          </form>
+      </mat-card>
+      <mat-card class="error" fxLayoutAlign="center center" *ngIf="errorMessage" >
+        {{errorMessage}}
+      </mat-card>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
