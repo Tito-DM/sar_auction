@@ -10,7 +10,7 @@ const newItem = async (req, res) => {
     if (err) {
       //there was an error in the database
       //Send 500 code
-      res.status(500).json(err);
+      res.status(500).json("item already exists");
     }
     //check if user exists
     User.findById(req.user.id, (errs, user) => {

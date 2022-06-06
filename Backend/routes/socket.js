@@ -13,6 +13,7 @@ let ioSocket = null; // global store object for websocket
 const updateItems = async () => {
   try {
     const items = await Item.find(); //sort to most recent
+    
     ioSocket.emit("update:items", items);
   } catch (error) {
     console.error(error.message);
@@ -53,6 +54,9 @@ exports.StartSocket = (io) => {
 
   console.log("Socket Started!");
   io.on("connection", async (socket) => {
+
+//call interval function to start the timer
+
     socket.on("newUser:username", (data) => {
       console.log("newUser:username -> New user event received: heloo", data);
       socketIDbyUsername.set(data.username, socket.id);
@@ -71,15 +75,17 @@ exports.StartSocket = (io) => {
       const item = await Item.findById(_id);
 
       if (!item) {
-        socket.emit("error", { errorMessage: "Item not found" });
+        socket.emit("error:message",  "Item not found" );
       }
 
       //check if current bid is greater than the one in the db
-      if (newBid > item?.currentbid && item.remainingtime > 0) {
+      if (newBid >= item?.currentbid && item.remainingtime > 0) {
         await item.update({
           currentbid: newBid,
           wininguser: userName,
         });
+      }else{
+        socket.emit("error:message",  "your bid must be higher then current bit" );
       }
 
       updateItems();

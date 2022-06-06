@@ -8,6 +8,7 @@ export class Item {
       public wininguser: string,
       public owner: string,
       public _id: string,
+      public sold: boolean,
     
 
 	){}

@@ -61,6 +61,7 @@ export class InsertitemComponent implements OnInit {
         this.socketservice.sendEvent("add:item", {});
       }, //callback to cath errors thrown bby the Observable in the service
       error: (error) => {
+        console.log("error", error);
         this.errorMessage = <any>error;
       },
     });

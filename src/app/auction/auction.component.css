@@ -7,6 +7,11 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
   color: white;
 }
 
+.message{
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
 .blink {
  
   animation: blink-animation 1s steps(5, start) infinite;

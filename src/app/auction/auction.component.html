@@ -123,27 +123,23 @@
             <button
               mat-raised-button
               color="primary"
-              [disabled]="!bidForm.valid || selectedItem.sold"
+              [disabled]="!bidForm.valid || selectedItem.sold || selectedItem.wininguser "
               type="submit"
               *ngIf="showSubmitBit"
             >
-              <span *ngIf="selectedItem.sold && selectedItem.wininguser">
+              <span *ngIf="selectedItem.sold && selectedItem.wininguser || status == 'sold'">
                 Item Sold
               </span>
 
-              <div
-                *ngIf="
-                  !selectedItem.wininguser && !selectedItem.wininguser;
-                  then thenTemplateName;
-                  else elseTemplateName
-                "
-              >
-                Here is never showing
-              </div>
-              <ng-template #thenTemplateName>
+              <span *ngIf="!selectedItem.sold && !selectedItem.wininguser && selectedItem.remainingtime > 0">
+                Submit Bid
+              </span>
+
+              <span *ngIf="!selectedItem.wininguser && selectedItem.remainingtime === 0 || status == 'nowinner'">
                 no winner time expired
-              </ng-template>
-              <ng-template #elseTemplateName> Submit Bid </ng-template>
+              </span>
+
+            
             </button>
             <button
               mat-raised-button
@@ -167,6 +163,8 @@
               color="primary"
               type="button"
               (click)="buyNow()"
+              [disabled]=" selectedItem.sold || !selectedItem.wininguser"
+              *ngIf="showSubmitBit"
             >
               Buy Now
             </button>
@@ -176,6 +174,7 @@
               type="button"
               (click)="removeItem()"
               *ngIf="showRemove"
+             
             >
               Remove
             </button>
@@ -216,7 +215,7 @@
       </mat-card>
       <!-- Message Card -->
       <mat-card fxLayoutAlign="center center">
-        <p>
+        <p class="message">
           {{ message }}
         </p>
       </mat-card>
