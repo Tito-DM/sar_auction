@@ -45,6 +45,7 @@ export class AuctionComponent implements OnInit {
   showRemove: boolean;
   showSubmitBit: boolean;
   deleteItemUrl: string;
+  formControl: boolean;
   counter: number;
   leftTime: number;
   showSenderMessage: boolean;
@@ -61,9 +62,10 @@ export class AuctionComponent implements OnInit {
     this.deleteItemUrl = "/api/items/removeitem";
     this.items = [];
     this.messageSender = "";
-    this.status = "" 
+    this.status = "";
     this.users = [];
     this.soldItem = {};
+    this.formControl = false;
     this.soldHistory = [
       "No items were sold.",
       "",
@@ -154,9 +156,6 @@ export class AuctionComponent implements OnInit {
         if (receiveddata.winner) {
           this.soldHistory[this.counter] = receiveddata.description.toString();
           this.counter++;
-          this.status = 'sold';
-        }else{
-          this.status = 'nowinner';
         }
       }
     });

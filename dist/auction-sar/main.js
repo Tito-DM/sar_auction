@@ -439,7 +439,7 @@ function AuctionComponent_form_53_mat_form_field_7_Template(rf, ctx) { if (rf & 
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-form-field", 36)(1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](3, "input", 44);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](3, "input", 43);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
@@ -462,20 +462,20 @@ function AuctionComponent_form_53_button_8_span_3_Template(rf, ctx) { if (rf & 1
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } }
 function AuctionComponent_form_53_button_8_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 45);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 44);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, AuctionComponent_form_53_button_8_span_1_Template, 2, 0, "span", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, AuctionComponent_form_53_button_8_span_2_Template, 2, 0, "span", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](3, AuctionComponent_form_53_button_8_span_3_Template, 2, 0, "span", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", !ctx_r31.bidForm.valid || ctx_r31.selectedItem.sold || ctx_r31.selectedItem.wininguser);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", !ctx_r31.bidForm.valid);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx_r31.selectedItem.sold && ctx_r31.selectedItem.wininguser || ctx_r31.status == "sold");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx_r31.selectedItem.sold && ctx_r31.selectedItem.wininguser);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !ctx_r31.selectedItem.sold && !ctx_r31.selectedItem.wininguser && ctx_r31.selectedItem.remainingtime > 0);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !ctx_r31.selectedItem.wininguser && ctx_r31.selectedItem.remainingtime === 0 || ctx_r31.status == "nowinner");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !ctx_r31.selectedItem.wininguser && ctx_r31.selectedItem.remainingtime === 0);
 } }
 function AuctionComponent_form_53_button_9_Template(rf, ctx) { if (rf & 1) {
     const _r41 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
@@ -486,13 +486,10 @@ function AuctionComponent_form_53_button_9_Template(rf, ctx) { if (rf & 1) {
 } }
 function AuctionComponent_form_53_button_12_Template(rf, ctx) { if (rf & 1) {
     const _r43 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function AuctionComponent_form_53_button_12_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r43); const ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2); return ctx_r42.buyNow(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Buy Now ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx_r33.selectedItem.sold || !ctx_r33.selectedItem.wininguser);
 } }
 function AuctionComponent_form_53_button_13_Template(rf, ctx) { if (rf & 1) {
     const _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
@@ -518,7 +515,7 @@ function AuctionComponent_form_53_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function AuctionComponent_form_53_Template_button_click_10_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r47); const ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r48.cancelBid(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](11, " Cancel ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](12, AuctionComponent_form_53_button_12_Template, 2, 1, "button", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](12, AuctionComponent_form_53_button_12_Template, 2, 0, "button", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](13, AuctionComponent_form_53_button_13_Template, 2, 0, "button", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
 } if (rf & 2) {
@@ -540,7 +537,7 @@ function AuctionComponent_form_53_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx_r15.showRemove);
 } }
 function AuctionComponent_map_marker_56_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "map-marker", 47);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "map-marker", 45);
 } if (rf & 2) {
     const marker_r49 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("position", marker_r49.position)("label", marker_r49.label);
@@ -575,7 +572,7 @@ function AuctionComponent_ng_container_64_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx_r18.showSenderMessage);
 } }
 function AuctionComponent_mat_card_68_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-card", 48);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-card", 46);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -597,6 +594,7 @@ class AuctionComponent {
         this.status = "";
         this.users = [];
         this.soldItem = {};
+        this.formControl = false;
         this.soldHistory = [
             "No items were sold.",
             "",
@@ -675,10 +673,6 @@ class AuctionComponent {
                 if (receiveddata.winner) {
                     this.soldHistory[this.counter] = receiveddata.description.toString();
                     this.counter++;
-                    this.status = 'sold';
-                }
-                else {
-                    this.status = 'nowinner';
                 }
             }
         });
@@ -798,7 +792,7 @@ class AuctionComponent {
     }
 }
 AuctionComponent.ɵfac = function AuctionComponent_Factory(t) { return new (t || AuctionComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_socket_service__WEBPACK_IMPORTED_MODULE_0__.SocketService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_auction_service__WEBPACK_IMPORTED_MODULE_1__.AuctionService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_signin_service__WEBPACK_IMPORTED_MODULE_2__.SigninService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpClient)); };
-AuctionComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: AuctionComponent, selectors: [["app-auction"]], decls: 69, vars: 13, consts: [["role", "navigation"], ["sidenav", ""], ["color", "primary"], ["fxHide.gt-xs", ""], ["mat-icon-button", "", 3, "click"], ["routerLink", "/"], ["fxFlex", "", "fxLayout", "", "fxLayoutAlign", "flex-end", "fxHide.xs", ""], ["fxLayout", "", "fxLayoutGap", "10px", 1, "navigation-items"], ["routerLink", "/insertitem"], [1, "icon"], [1, "label"], [1, "icon", 3, "click"], [1, "label", 3, "click"], ["fxLayout", "column", "fxLayoutAlign", "space-between stretch"], [3, "dataSource"], ["matColumnDef", "description"], [4, "matHeaderCellDef"], [4, "matCellDef"], ["matColumnDef", "currentbid"], ["matColumnDef", "buynow"], ["matColumnDef", "remainingtime"], ["matColumnDef", "wininguser"], ["matColumnDef", "owner"], [4, "matHeaderRowDef"], [3, "ngClass", "click", 4, "matRowDef", "matRowDefColumns"], ["fxLayoutAlign", "center center"], [3, "formGroup", "submit", 4, "ngIf"], [3, "width", "height", "options"], [3, "position", "label", 4, "ngFor", "ngForOf"], [1, "logClass"], [4, "ngFor", "ngForOf"], [1, "message"], ["class", "error", "fxLayoutAlign", "center center", 4, "ngIf"], [3, "ngClass", "click"], [3, "formGroup", "submit"], ["fxLayout", "column", "fxFlex", "", "fxLayout.lt-sm", "column", "fxLayoutGap", "5px"], ["appearance", "outline", 1, "form-field"], ["matInput", "", "formControlName", "bid", "required", ""], [4, "ngIf"], ["class", "form-field", "appearance", "outline", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", "type", "submit", 3, "disabled", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", "type", "button", 3, "click", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", "type", "button", 3, "click"], ["mat-raised-button", "", "color", "primary", "type", "button", 3, "disabled", "click", 4, "ngIf"], ["matInput", "", "formControlName", "message"], ["mat-raised-button", "", "color", "primary", "type", "submit", 3, "disabled"], ["mat-raised-button", "", "color", "primary", "type", "button", 3, "disabled", "click"], [3, "position", "label"], ["fxLayoutAlign", "center center", 1, "error"]], template: function AuctionComponent_Template(rf, ctx) { if (rf & 1) {
+AuctionComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: AuctionComponent, selectors: [["app-auction"]], decls: 69, vars: 13, consts: [["role", "navigation"], ["sidenav", ""], ["color", "primary"], ["fxHide.gt-xs", ""], ["mat-icon-button", "", 3, "click"], ["routerLink", "/"], ["fxFlex", "", "fxLayout", "", "fxLayoutAlign", "flex-end", "fxHide.xs", ""], ["fxLayout", "", "fxLayoutGap", "10px", 1, "navigation-items"], ["routerLink", "/insertitem"], [1, "icon"], [1, "label"], [1, "icon", 3, "click"], [1, "label", 3, "click"], ["fxLayout", "column", "fxLayoutAlign", "space-between stretch"], [3, "dataSource"], ["matColumnDef", "description"], [4, "matHeaderCellDef"], [4, "matCellDef"], ["matColumnDef", "currentbid"], ["matColumnDef", "buynow"], ["matColumnDef", "remainingtime"], ["matColumnDef", "wininguser"], ["matColumnDef", "owner"], [4, "matHeaderRowDef"], [3, "ngClass", "click", 4, "matRowDef", "matRowDefColumns"], ["fxLayoutAlign", "center center"], [3, "formGroup", "submit", 4, "ngIf"], [3, "width", "height", "options"], [3, "position", "label", 4, "ngFor", "ngForOf"], [1, "logClass"], [4, "ngFor", "ngForOf"], [1, "message"], ["class", "error", "fxLayoutAlign", "center center", 4, "ngIf"], [3, "ngClass", "click"], [3, "formGroup", "submit"], ["fxLayout", "column", "fxFlex", "", "fxLayout.lt-sm", "column", "fxLayoutGap", "5px"], ["appearance", "outline", 1, "form-field"], ["matInput", "", "formControlName", "bid", "required", ""], [4, "ngIf"], ["class", "form-field", "appearance", "outline", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", "type", "submit", 3, "disabled", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", "type", "button", 3, "click", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", "type", "button", 3, "click"], ["matInput", "", "formControlName", "message"], ["mat-raised-button", "", "color", "primary", "type", "submit", 3, "disabled"], [3, "position", "label"], ["fxLayoutAlign", "center center", 1, "error"]], template: function AuctionComponent_Template(rf, ctx) { if (rf & 1) {
         const _r54 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-sidenav-container");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](1, "mat-sidenav", 0, 1);

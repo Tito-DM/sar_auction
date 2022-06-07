@@ -98,8 +98,9 @@
               <mat-label>
                 Place Bid for {{ selectedItem.description }}
               </mat-label>
-              <input matInput formControlName="bid" required />
+              <input matInput formControlName="bid" required   />
               <mat-error
+            
                 *ngIf="
                   bidForm.controls.bid.touched && bidForm.controls.bid.invalid
                 "
@@ -123,11 +124,11 @@
             <button
               mat-raised-button
               color="primary"
-              [disabled]="!bidForm.valid || selectedItem.sold || selectedItem.wininguser "
+              [disabled]="!bidForm.valid" 
               type="submit"
               *ngIf="showSubmitBit"
             >
-              <span *ngIf="selectedItem.sold && selectedItem.wininguser || status == 'sold'">
+              <span *ngIf="selectedItem.sold && selectedItem.wininguser ">
                 Item Sold
               </span>
 
@@ -135,7 +136,7 @@
                 Submit Bid
               </span>
 
-              <span *ngIf="!selectedItem.wininguser && selectedItem.remainingtime === 0 || status == 'nowinner'">
+              <span *ngIf="!selectedItem.wininguser && selectedItem.remainingtime === 0 ">
                 no winner time expired
               </span>
 
@@ -163,7 +164,6 @@
               color="primary"
               type="button"
               (click)="buyNow()"
-              [disabled]=" selectedItem.sold || !selectedItem.wininguser"
               *ngIf="showSubmitBit"
             >
               Buy Now
